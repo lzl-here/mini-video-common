@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package info;
+
+option go_package = "github.com/lzl-here/mini_video_proto/grpc/user/info;info";
+
+enum UserInfo {
+  ONLINE = 0;
+
+  OFFLINE = 1;
+
+  CANCELLED = 2;
+}

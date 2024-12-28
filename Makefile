@@ -16,13 +16,4 @@ gen:
 	@echo "Generating Go code..."
 	@cd $(PROTOBUF_DIR) && $(BUF_GENERATE_CMD)
 
-
-# 定义push目标
-push:
-	@echo "Generating new tag..."
-	@TAG_NAME="v$(date +%Y%m%d%H%M%S)" && git tag -a $$TAG_NAME -m "Auto tag for commit $(shell git rev-parse HEAD) on branch $(shell git rev-parse --abbrev-ref HEAD)"
-	@echo "Pushing code and tag to remote repository..."
-	@git push origin --tags
-
-
 .PHONY: gen

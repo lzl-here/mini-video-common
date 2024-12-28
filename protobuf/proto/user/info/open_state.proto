@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package info;
 
-option go_package = "github.com/lzl-here/mini_video_proto/grpc/user/info;info";
+option go_package = "github.com/lzl-here/mini-video-common/grpc/user/info";
 
 enum UserInfo {
   ONLINE = 0;

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user;
 
-option go_package = "github.com/lzl-here/mini_video_proto/grpc/user";
+option go_package = "github.com/lzl-here/mini-video-common/grpc/user";
 
 message PingReq {
   int32 code = 1;

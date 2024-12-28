@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package define;
 
-option go_package = "github.com/lzl-here/mini_video_proto/grpc/define";
+option go_package = "github.com/lzl-here/mini-video-common/grpc/define";
 
 message BaseResponse {
   int32 code = 1;

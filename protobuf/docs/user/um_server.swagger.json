@@ -48,12 +48,30 @@
     "userUserInfoData": {
       "type": "object",
       "properties": {
-        "uid": {
+        "id": {
           "type": "string",
           "format": "uint64"
         },
         "nick_name": {
           "type": "string"
+        },
+        "avatar_url": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deleted_at": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     },

@@ -18,11 +18,11 @@ func LoadService(cfgFile string) *AppServiceConfig {
 	return &AppServiceConfig{
 		&RepoConfig{
 			&DBRepoConfig{
-				DBHost:      getStrEnvOrDefault("DB_HOST", "localhost"),
-				DBPort:      getIntEnvOrDefault("DB_PORT", 3306),
-				DBUser:      getStrEnvOrDefault("DB_USER", "root"),
-				DBPass:      getStrEnvOrDefault("DB_PASS", "root"),
-				DBTableName: getStrEnvOrDefault("DB_TABLE_NAME", "test_db"),
+				DBHost: getStrEnvOrDefault("DB_HOST", "localhost"),
+				DBPort: getIntEnvOrDefault("DB_PORT", 3306),
+				DBUser: getStrEnvOrDefault("DB_USER", "root"),
+				DBPass: getStrEnvOrDefault("DB_PASS", "root"),
+				DBName: getStrEnvOrDefault("DB_TABLE_NAME", "test_db"),
 			},
 			&CacheRepoConfig{
 				CacheHost: getStrEnvOrDefault("CACHE_HOST", "localhost"),

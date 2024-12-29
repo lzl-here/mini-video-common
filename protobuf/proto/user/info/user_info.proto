@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package info;
+package user;
 
 option go_package = "github.com/lzl-here/mini-video-common/grpc/user/info";
 
@@ -10,4 +10,20 @@ enum UserInfo {
   OFFLINE = 1;
 
   CANCELLED = 2;
+}
+
+message UserInfoReq {
+  uint64 uid = 1;
+}
+
+message UserInfoData{
+  uint64 uid = 1;
+  string nick_name = 2;
+}
+
+message UserInfoRsp {
+  int32 code = 1;
+  string log_id = 2;
+  string msg = 3;
+  UserInfoData data = 4;
 }

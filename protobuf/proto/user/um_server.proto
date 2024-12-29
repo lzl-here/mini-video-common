@@ -4,14 +4,9 @@ package user;
 
 option go_package = "github.com/lzl-here/mini-video-common/grpc/user";
 
-message PingReq {
-  int32 code = 1;
-  string msg = 2;
+import "user/info/user_info.proto";
+
+service UserService {
+  rpc GetUserInfo(UserInfoReq) returns (UserInfoRsp) {}
 }
 
-message PingRsp {
-  int32 code = 1;
-  string msg = 2;
-  string log_id = 3;
-  reserved 4;
-}

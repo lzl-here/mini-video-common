@@ -1,14 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "user/um_server.proto",
+    "title": "user/info/user_info.proto",
     "version": "version not set"
   },
-  "tags": [
-    {
-      "name": "UserService"
-    }
-  ],
   "consumes": [
     "application/json"
   ],
@@ -42,36 +37,6 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "userUserInfoData": {
-      "type": "object",
-      "properties": {
-        "uid": {
-          "type": "string",
-          "format": "uint64"
-        },
-        "nick_name": {
-          "type": "string"
-        }
-      }
-    },
-    "userUserInfoRsp": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "log_id": {
-          "type": "string"
-        },
-        "msg": {
-          "type": "string"
-        },
-        "data": {
-          "$ref": "#/definitions/userUserInfoData"
         }
       }
     }

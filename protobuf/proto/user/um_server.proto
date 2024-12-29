@@ -4,7 +4,7 @@ package user;
 
 option go_package = "github.com/lzl-here/mini-video-common/grpc/user";
 
-import "user/info/user_info.proto";
+import "user/user_info.proto";
 
 service UserService {
   rpc GetUserInfo(UserInfoReq) returns (UserInfoRsp) {}

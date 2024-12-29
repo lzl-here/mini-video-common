@@ -4,6 +4,8 @@ package user;
 
 option go_package = "github.com/lzl-here/mini-video-common/grpc/user";
 
+import "google/protobuf/timestamp.proto";
+
 enum UserInfo {
   ONLINE = 0;
 
@@ -16,9 +18,14 @@ message UserInfoReq {
   uint64 uid = 1;
 }
 
-message UserInfoData{
-  uint64 uid = 1;
+message UserInfoData {
+  uint64 id = 1;
   string nick_name = 2;
+  string avatar_url = 3;
+  string desc = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+  google.protobuf.Timestamp deleted_at = 7;
 }
 
 message UserInfoRsp {

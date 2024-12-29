@@ -8,7 +8,6 @@ package user
 
 import (
 	context "context"
-	info "github.com/lzl-here/mini-video-common/grpc/user/info"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -27,7 +26,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
-	GetUserInfo(ctx context.Context, in *info.UserInfoReq, opts ...grpc.CallOption) (*info.UserInfoRsp, error)
+	GetUserInfo(ctx context.Context, in *UserInfoReq, opts ...grpc.CallOption) (*UserInfoRsp, error)
 }
 
 type userServiceClient struct {
@@ -38,9 +37,9 @@ func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 
-func (c *userServiceClient) GetUserInfo(ctx context.Context, in *info.UserInfoReq, opts ...grpc.CallOption) (*info.UserInfoRsp, error) {
+func (c *userServiceClient) GetUserInfo(ctx context.Context, in *UserInfoReq, opts ...grpc.CallOption) (*UserInfoRsp, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(info.UserInfoRsp)
+	out := new(UserInfoRsp)
 	err := c.cc.Invoke(ctx, UserService_GetUserInfo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -52,7 +51,7 @@ func (c *userServiceClient) GetUserInfo(ctx context.Context, in *info.UserInfoRe
 // All implementations should embed UnimplementedUserServiceServer
 // for forward compatibility.
 type UserServiceServer interface {
-	GetUserInfo(context.Context, *info.UserInfoReq) (*info.UserInfoRsp, error)
+	GetUserInfo(context.Context, *UserInfoReq) (*UserInfoRsp, error)
 }
 
 // UnimplementedUserServiceServer should be embedded to have
@@ -62,7 +61,7 @@ type UserServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedUserServiceServer struct{}
 
-func (UnimplementedUserServiceServer) GetUserInfo(context.Context, *info.UserInfoReq) (*info.UserInfoRsp, error) {
+func (UnimplementedUserServiceServer) GetUserInfo(context.Context, *UserInfoReq) (*UserInfoRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
 }
 func (UnimplementedUserServiceServer) testEmbeddedByValue() {}
@@ -86,7 +85,7 @@ func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
 }
 
 func _UserService_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(info.UserInfoReq)
+	in := new(UserInfoReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -98,7 +97,7 @@ func _UserService_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: UserService_GetUserInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetUserInfo(ctx, req.(*info.UserInfoReq))
+		return srv.(UserServiceServer).GetUserInfo(ctx, req.(*UserInfoReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }

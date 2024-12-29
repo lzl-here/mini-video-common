@@ -7,7 +7,6 @@
 package user
 
 import (
-	info "github.com/lzl-here/mini-video-common/grpc/user/info"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -42,8 +41,8 @@ var file_user_um_server_proto_rawDesc = []byte{
 }
 
 var file_user_um_server_proto_goTypes = []any{
-	(*info.UserInfoReq)(nil), // 0: user.UserInfoReq
-	(*info.UserInfoRsp)(nil), // 1: user.UserInfoRsp
+	(*UserInfoReq)(nil), // 0: user.UserInfoReq
+	(*UserInfoRsp)(nil), // 1: user.UserInfoRsp
 }
 var file_user_um_server_proto_depIdxs = []int32{
 	0, // 0: user.UserService.GetUserInfo:input_type -> user.UserInfoReq
@@ -60,6 +59,7 @@ func file_user_um_server_proto_init() {
 	if File_user_um_server_proto != nil {
 		return
 	}
+	file_user_user_info_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -1,9 +1,7 @@
 package model
 
-import "time"
-
 type TimeModel struct {
-	CreatedAt time.Time `json:"created_at,omitempty" gorm:"column:created_at"`
-	UpdatedAt time.Time `json:"updated_at,omitempty" gorm:"column:updated_at"`
-	DeletedAt time.Time `json:"deleted_at,omitempty" gorm:"column:deleted_at"`
+	CreatedAt uint64 `json:"created_at,omitempty" gorm:"column:created_at"`
+	UpdatedAt uint64 `json:"updated_at,omitempty" gorm:"column:updated_at"`
+	DeletedAt uint64 `json:"deleted_at,omitempty" gorm:"column:deleted_at"`
 }

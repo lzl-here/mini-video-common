@@ -23,9 +23,9 @@ message UserInfoData {
   string nick_name = 2;
   string avatar_url = 3;
   string desc = 4;
-  google.protobuf.Timestamp created_at = 5;
-  google.protobuf.Timestamp updated_at = 6;
-  google.protobuf.Timestamp deleted_at = 7;
+  uint64 created_at = 5;
+  uint64 updated_at = 6;
+  uint64 deleted_at = 7;
 }
 
 message UserInfoRsp {

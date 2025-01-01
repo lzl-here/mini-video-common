@@ -38,6 +38,12 @@ func LoadService(cfgFile string) *AppServiceConfig {
 			ServiceID:       getIntEnvOrDefault("SERVICE_ID", -1),
 			ServiceName:     getStrEnvOrDefault("SERVICE_NAME", "暂无名称"),
 		},
+		&CosConfig{
+			CosBucket:    getStrEnvOrDefault("COS_BUCKET", ""),
+			CosHost:      getStrEnvOrDefault("COS_HOST", ""),
+			CosSecretID:  getStrEnvOrDefault("COS_SECRET_ID", ""),
+			CosSecretKey: getStrEnvOrDefault("COS_SECRET_KEY", ""),
+		},
 	}
 }
 
